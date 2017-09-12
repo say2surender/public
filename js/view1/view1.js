@@ -23,7 +23,7 @@ angular.module('myApp.view1', ['ngRoute'])
       $scope.selectedId = item.id
       $http({
         method: 'GET',
-        url: 'https://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/opportunities/' + item.id + '?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c',
+        url: 'http://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/opportunities/' + item.id + '?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c',
       }).then(function successCallback(response) {
         $scope.selectedItem = response.data;
         $scope.skills = R.symmetricDifferenceWith(eqA, $scope.skills, response.data.skills)
@@ -44,7 +44,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
     $http({
       method: 'GET',
-      url: 'https://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/lists/backgrounds?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c'
+      url: 'http://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/lists/backgrounds?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c'
     }).then(function successCallback(response) {
       $scope.bgs = R.map(R.merge({
         'option': 'required',
@@ -56,7 +56,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
     $http({
       method: 'GET',
-      url: 'https://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/lists/skills?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c'
+      url: 'http://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/lists/skills?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c'
     }).then(function successCallback(response) {
       $scope.skills = R.map(R.merge({
         'option': 'required',
@@ -68,7 +68,7 @@ angular.module('myApp.view1', ['ngRoute'])
       $scope.page = page
       $http({
         method: 'GET',
-        url: 'https://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/opportunities?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c',
+        url: 'http://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/opportunities?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c',
         params: {
           page: $scope.page
         }
@@ -81,7 +81,7 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.getOpp525 = function() {
       $http({
         method: 'GET',
-        url: 'https://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/opportunities/525?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c',
+        url: 'http://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/opportunities/525?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c',
       }).then(function successCallback(response) {
         $scope.opp525 = response.data
       }, function errorCallback(response) {});
