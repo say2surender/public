@@ -1,0 +1,63 @@
+<div class='ng-modal' ng-show='show'>
+  <div class='ng-modal-overlay' ng-click='hideModal()'></div>
+  <div class='ng-modal-dialog' ng-style='dialogStyle' style="position:fixed;">
+    <div class='ng-modal-close' ng-click='hideModal()'>X</div>
+    <div class='ng-modal-dialog-content' ng-transclude></div>
+    <!-- Form starts here -->
+    <div class="form">
+      <form style="padding:20px; font-size:12px; height: 85vh; overflow-y: scroll;">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" ng-model="item.title" id="title" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label for="applications_close_date">Applications Close Date</label>
+          <input type="text" class="form-control" ng-model="item.applications_close_date"/>
+        </div>
+        <div class="form-group">
+          <label for="earliest_start_date">Earliest Start Date</label>
+          <input type="text" class="form-control" ng-model="item.earliest_start_date"/>
+        </div>
+        <div class="form-group">
+          <label for="latest_end_date">Latest End Date</label>
+          <input type="text" class="form-control" ng-model="item.latest_end_date"/>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" ng-model="item.description" id="description" placeholder="Description">
+        </div>
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="text" class="form-control" ng-model="item.salary" id="salary" placeholder="Salary">
+        </div>
+        <div class="form-group">
+          <label for="selection_process">Selection process</label>
+          <input type="text" class="form-control" ng-model="item.selection_process" id="selection_process" placeholder="Selection process">
+        </div>
+
+        <div class="form-group">
+          <label for="skills">Skills</label>
+          <div isteven-multi-select input-model="skills" output-model="item.skills" button-label="name" item-label="name" tick-property="ticked"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="backgrounds">Backgrounds</label>
+          <div isteven-multi-select input-model="bgs" output-model="item.backgrounds" button-label="name" tick-property="ticked" item-label="name"></div>
+
+          <div class="form-group">
+            <label for="place">Place</label>
+            <i class="icons fa fa-search" aria-hidden="true" style="float:right; padding:5px" ng-click='onrefresh(item.role_info.city)'></i>
+            <input type="text" class="form-control" ng-model="item.role_info.city" id="city" placeholder="City">
+          </div>
+
+          <div class="form-group">
+
+            <button type="submit" class="btn btn-default" ng-click=sendPatch();hideModal()>Submit</button>
+          </div>
+        </form>
+      </div>
+      <!-- Form ends here -->
+
+    </div>
+  </div>

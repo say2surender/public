@@ -1,0 +1,195 @@
+<div class="row" ng-init="getOpp525(); getOpps(1)">
+  <modal-dialog show='modalShown' item='selectedItem' selectedId='selectedItem.id' skills='skills' bgs='bgs' width='700px' height='90%'>
+      </modal-dialog>
+  <div class="col-md-2 card">
+  </div>
+  <div class="col-md-9">
+    <div class="opps525">
+      <div class="card">
+        <div class="row">
+          <div class="col-md-3">
+            <img src={{opp525.cover_photo_urls}} alt="Company_Cover" style="width:100%">
+          </div>
+          <div class="col-md-9">
+            <div class="edit">
+              <i class="icons fa fa-edit" aria-hidden="true" style="float:right; padding:5px" ng-click='toggleModal(opp525)'>
+              </i>
+            </div>
+            <h5 class="title">{{opp525.title}}</h5>
+            <h6 style="color:#666;">{{opp525.description}}</h6>
+            <span ng-repeat="background in opp525.backgrounds">{{background.name}}</span>
+            <hr style="margin: 3px 5px;">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="vertical_center">
+                      <i class="icons fa fa-book helper" aria-hidden="true" style="font-size:24px; color:#888"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-9">
+                    <ul class="list-unstyled vertical_center" style="font-size:12px;">
+                      <li ng-repeat="skill in opp525.skills">{{skill.name}}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="vertical_center">
+                      <i class="icons fa fa-calendar helper" aria-hidden="true" style="font-size:24px; color:#888"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-9">
+                    <ul class="list-unstyled vertical_center" style="font-size:12px;">
+                    <li>{{opp525.applications_close_date | date:'yyyy-MM-dd'}}</li>
+                    <li>{{opp525.earliest_start_date | date:'yyyy-MM-dd'}}</li>
+                    <li>{{opp525.latest_end_date | date:'yyyy-MM-dd'}}</li>
+                  </ul>
+                    <span>{{opp525.selection_process}}</span>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-3">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="vertical_center">
+                      <i class="icons fa fa-map-marker helper" aria-hidden="true" style="font-size:24px; color:#888"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-9">
+                    <span style="font-size:12px;">{{opp525.role_info.city}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="vertical_center">
+                      <i class="icons fa fa-money helper" aria-hidden="true" style="font-size:24px; color:#888"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-9">
+                    <span>{{opp525.salary}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    </div>
+    <hr>
+    <div class="card-all" ng-repeat="item in items">
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3">
+              <img src={{item.cover_photo_urls}} alt="Company_Cover" style="width:100%">
+            </div>
+            <div class="col-md-9">
+              <div class="edit">
+                <i class="icons fa fa-edit" aria-hidden="true" style="float:right; padding:5px" ng-click='toggleModal(item)'>
+                </i>
+              </div>
+              <h5 class="title">{{item.title}}</h5>
+              <h6 style="color:#666;">{{item.description}}</h6>
+              <span ng-repeat="background in item.backgrounds">{{background.name}}</span>
+              <hr style="margin: 3px 5px;">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="vertical_center">
+                        <i class="icons fa fa-book helper" aria-hidden="true" style="font-size:24px; color:#888"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <ul class="list-unstyled vertical_center" style="font-size:12px;">
+                        <li ng-repeat="skill in item.skills">{{skill.name}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="vertical_center">
+                        <i class="icons fa fa-calendar helper" aria-hidden="true" style="font-size:24px; color:#888"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <ul class="list-unstyled vertical_center" style="font-size:12px;">
+                      <li>{{item.applications_close_date | date:'yyyy-MM-dd'}}</li>
+                      <li>{{item.earliest_start_date | date:'yyyy-MM-dd'}}</li>
+                      <li>{{item.latest_end_date | date:'yyyy-MM-dd'}}</li>
+                    </ul>
+                      <span>{{item.selection_process}}</span>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-md-3">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="vertical_center">
+                        <i class="icons fa fa-map-marker helper" aria-hidden="true" style="font-size:24px; color:#888"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <span style="font-size:12px;">{{item.role_info.city}}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="vertical_center">
+                        <i class="icons fa fa-money helper" aria-hidden="true" style="font-size:24px; color:#888"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <span>{{item.salary}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-centered">
+
+        <div class="pagination">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" ng-click="getOpps(page-1)" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" ng-show="page!=1" ng-click="getOpps(1)">1</a></li>
+              <li class="page-item"><a class="page-link" ng-show="page!=1" ng-click="getOpps(page-1)">{{page-1}}</a></li>
+              <li class="page-item"><a class="page-link" style="background-color:#ccc" ng-click="getOpps(page)">{{page}}</a></li>
+              <li class="page-item"><a class="page-link" ng-show="page!=lastPage" ng-click="getOpps(page+1)">{{page+1}}</a></li>
+              <li class="page-item"><a class="page-link" ng-show="page!=lastPage" ng-click="getOpps(lastPage)">{{lastPage}}</a></li>
+
+              <li class="page-item">
+                <a class="page-link" ng-click="getOpps(page+1)" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
